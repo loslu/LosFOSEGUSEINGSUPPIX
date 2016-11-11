@@ -15,10 +15,10 @@ typedef unsigned char UCHAR;
 class MinSegInvoker
 {
 	int Initial();
-	int RemovePoint();
-	int CalcCost();
-	int LocalNucCost();
-	int BackgroundCost();
+	int RemovePoint();	//把深色的细胞核区域插值成浅色
+	int CalcCost();		//以梯度为基础，计算代价矩阵
+	int LocalNucCost();	//屏蔽细胞核中心区域
+	int BackgroundCost();	//屏蔽边缘部分
 	int ModifyCost(Mat &_scanLineRet);
 	void MinPath();
 	int DrawEdge(Mat &_img);
